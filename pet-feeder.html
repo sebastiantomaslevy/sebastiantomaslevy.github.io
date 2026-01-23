@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Pet Feeder - Mechatronics Project</title>
+    <style>
+        /* REUSING MAIN STYLES */
+        :root { --primary: #003366; --accent: #E34A08; --light: #f4f4f4; --dark: #333; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; margin: 0; color: var(--dark); }
+        .container { max-width: 900px; margin: auto; padding: 0 2rem; }
+        nav { background: var(--primary); color: white; padding: 1rem; }
+        nav a { color: white; text-decoration: none; font-weight: bold; }
+        
+        /* PAGE SPECIFIC */
+        header { padding: 3rem 0; border-bottom: 2px solid #ddd; margin-bottom: 2rem; }
+        h1 { color: var(--primary); margin-bottom: 0.5rem; }
+        .metadata { color: #666; font-style: italic; margin-bottom: 1rem; }
+        .section-title { color: var(--accent); border-left: 4px solid var(--accent); padding-left: 10px; margin-top: 2rem; }
+        .back-btn { display: inline-block; background: #ddd; color: #333; padding: 8px 15px; text-decoration: none; border-radius: 4px; margin-bottom: 20px; }
+        
+        /* CODE BLOCK STYLE */
+        .code-block { background: #eee; padding: 1rem; border-radius: 5px; font-family: 'Courier New', monospace; font-size: 0.9rem; overflow-x: auto; }
+        
+        img { width: 100%; border-radius: 5px; margin-bottom: 1rem; }
+    </style>
+</head>
+<body>
+
+    <nav><div class="container"><a href="index.html">← Back to Portfolio</a></div></nav>
+
+    <div class="container">
+        <br><a href="index.html" class="back-btn">Return to Home</a>
+
+        <header>
+            <h1>Automated Mechatronic Pet Feeder</h1>
+            <p class="metadata">Course: Instrumentation | Tech Stack: Arduino, C++, Stepper Motors, LCD Display</p>
+        </header>
+
+        <img src="https://via.placeholder.com/900x400?text=Pet+Feeder+Final+Assembly" alt="Pet Feeder Assembly">
+
+        <section>
+            <h2 class="section-title">The Objective</h2>
+            <p>
+                To design and build a fully automated dry-food dispenser that dispenses precise portions at user-scheduled intervals, solving the problem of irregular feeding times for pet owners.
+            </p>
+
+            <h2 class="section-title">System Architecture</h2>
+            <p>I integrated three main subsystems controlled by an Arduino Uno:</p>
+            <ul>
+                <li><strong>Actuation:</strong> NEMA 17 Stepper motor with a custom 3D-printed auger screw for consistent food delivery.</li>
+                <li><strong>User Interface:</strong> 16x2 LCD screen with buttons to set current time and feeding schedule.</li>
+                <li><strong>Sensing:</strong> RTC (Real Time Clock) module for accurate timing and IR sensors to detect low food levels.</li>
+            </ul>
+
+            <h2 class="section-title">Logic & Code</h2>
+            <p>The system uses a state-machine architecture to handle user input without blocking the timing loop.</p>
+            <div class="code-block">
+                // Snippet of the dispensing logic
+                if (currentHour == feedHour && currentMinute == feedMinute) {
+                    lcd.print("Dispensing...");
+                    stepper.step(STEPS_PER_REVOLUTION * portions);
+                    logFeedingTime();
+                }
+            </div>
+
+            <h2 class="section-title">The Outcome</h2>
+            <p>
+                The final prototype successfully dispensed kibble with ±5% weight accuracy. The project received top marks in the Instrumentation course for its clean wiring and robust error handling.
+            </p>
+        </section>
+
+    </div>
+    
+    <footer style="text-align:center; padding: 2rem; margin-top:3rem; background: var(--dark); color: white;">
+        &copy; 2026 Sebastian Levy
+    </footer>
+
+</body>
+</html>
