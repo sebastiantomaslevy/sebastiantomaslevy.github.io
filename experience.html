@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Experience & Leadership</title>
+    <style>
+        /* REUSING MAIN STYLES */
+        :root { --primary: #003366; --accent: #E34A08; --light: #f4f4f4; --dark: #333; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; margin: 0; color: var(--dark); }
+        .container { max-width: 900px; margin: auto; padding: 0 2rem; }
+        nav { background: var(--primary); color: white; padding: 1rem; }
+        nav a { color: white; text-decoration: none; font-weight: bold; }
+        .back-btn { display: inline-block; background: #ddd; color: #333; padding: 8px 15px; text-decoration: none; border-radius: 4px; margin-top: 20px; }
+
+        /* EXPERIENCE CARD STYLES */
+        .exp-section { margin-top: 3rem; }
+        .exp-category { border-bottom: 2px solid var(--primary); margin-bottom: 2rem; padding-bottom: 0.5rem; color: var(--primary); }
+        
+        .exp-card {
+            background: white;
+            border-left: 5px solid var(--accent);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .exp-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; }
+        .exp-title { font-size: 1.4rem; font-weight: bold; margin: 0; }
+        .exp-date { color: #666; font-size: 0.9rem; }
+        .exp-role { color: var(--accent); font-weight: bold; margin-bottom: 1rem; display: block; }
+    </style>
+</head>
+<body>
+
+    <nav><div class="container"><a href="index.html">← Back to Portfolio</a></div></nav>
+
+    <div class="container">
+        <a href="index.html" class="back-btn">Return to Home</a>
+        
+        <div style="text-align:center; padding: 2rem 0;">
+            <h1>University Experience & Awards</h1>
+            <p>Leadership, volunteering, and competitive achievements at York University.</p>
+        </div>
+
+        <section class="exp-section">
+            <h2 class="exp-category">Leadership & Volunteering</h2>
+
+            <div class="exp-card">
+                <div class="exp-header">
+                    <h3 class="exp-title">UNHack Mentor</h3>
+                    <span class="exp-date">Oct 2025 - Nov 2025</span>
+                </div>
+                <span class="exp-role">BEST Lassonde</span>
+                <p>Mentored first-year engineering students during a 3-day hackathon. Guided teams through the design thinking process, prototyping, and pitch preparation.</p>
+            </div>
+
+            <div class="exp-card">
+                <div class="exp-header">
+                    <h3 class="exp-title">Orientation Week Leader</h3>
+                    <span class="exp-date">Sept 2025</span>
+                </div>
+                <span class="exp-role">Lassonde School of Engineering</span>
+                <p>Led a group of 50+ incoming engineering students. Facilitated team-building activities and helped new students transition into university life.</p>
+            </div>
+        </section>
+
+        <section class="exp-section">
+            <h2 class="exp-category">Awards & Competitions</h2>
+
+            <div class="exp-card" style="border-left-color: #FFD700;"> <div class="exp-header">
+                    <h3 class="exp-title">Winner - AIC Hackathon</h3>
+                    <span class="exp-date">2025</span>
+                </div>
+                <p>Secured 1st place in the Artificial Intelligence Competition (AIC). Developed a solution utilizing [Insert Key Tech Here] to solve [Insert Problem].</p>
+            </div>
+
+            <div class="exp-card" style="border-left-color: #FFD700;">
+                <div class="exp-header">
+                    <h3 class="exp-title">BEST Award Recipient</h3>
+                    <span class="exp-date">2025</span>
+                </div>
+                <p>Awarded for demonstrating entrepreneurial spirit and engineering excellence within the Lassonde community.</p>
+            </div>
+        </section>
+
+    </div>
+    
+    <footer style="text-align:center; padding: 2rem; margin-top:3rem; background: var(--dark); color: white;">
+        &copy; 2026 Sebastian Levy
+    </footer>
+
+</body>
+</html>
