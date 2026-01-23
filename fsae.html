@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FSAE Fuel Tank Design - Project Details</title>
+    <style>
+        /* REUSING YOUR MAIN STYLES FOR CONSISTENCY */
+        :root {
+            --primary: #003366;
+            --accent: #E34A08;
+            --light: #f4f4f4;
+            --dark: #333;
+        }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; margin: 0; color: var(--dark); }
+        .container { max-width: 900px; margin: auto; padding: 0 2rem; }
+        
+        /* Navigation Bar */
+        nav { background: var(--primary); color: white; padding: 1rem; }
+        nav a { color: white; text-decoration: none; font-weight: bold; }
+        nav a:hover { text-decoration: underline; }
+
+        /* Project Specific Styles */
+        header { padding: 3rem 0; border-bottom: 2px solid #ddd; margin-bottom: 2rem; }
+        h1 { color: var(--primary); margin-bottom: 0.5rem; }
+        .metadata { color: #666; font-style: italic; margin-bottom: 1rem; }
+        
+        .image-gallery { margin: 2rem 0; }
+        .image-gallery img { width: 100%; border-radius: 5px; margin-bottom: 1rem; }
+        
+        .section-title { color: var(--accent); border-left: 4px solid var(--accent); padding-left: 10px; margin-top: 2rem; }
+        
+        /* The Back Button */
+        .back-btn { display: inline-block; background: #ddd; color: #333; padding: 8px 15px; text-decoration: none; border-radius: 4px; margin-bottom: 20px; }
+        .back-btn:hover { background: #ccc; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <a href="index.html">← Back to Portfolio</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <br>
+        <a href="index.html" class="back-btn">Return to Home</a>
+
+        <header>
+            <h1>FSAE Fuel Tank Design</h1>
+            <p class="metadata">Role: Powertrain Team Member | Tools: SolidWorks, Ansys, TIG Welding</p>
+        </header>
+
+        <div class="image-gallery">
+            <img src="https://via.placeholder.com/900x400?text=Final+CAD+Render" alt="Fuel Tank CAD">
+        </div>
+
+        <section>
+            <h2 class="section-title">The Challenge</h2>
+            <p>
+                The 2025 FSAE regulations required a fuel capacity of X liters while fitting within a constrained chassis envelope. 
+                Previous designs suffered from fuel starvation during high-G cornering.
+            </p>
+
+            <h2 class="section-title">The Solution</h2>
+            <p>
+                I designed a custom aluminum fuel tank featuring:
+            </p>
+            <ul>
+                <li><strong>Baffle System:</strong> Integrated internal baffling to minimize sloshing and maintain fuel pickup.</li>
+                <li><strong>Material Selection:</strong> Switched to 5052-H32 Aluminum for superior weldability and fatigue resistance.</li>
+                <li><strong>Validation:</strong> Performed fluid flow simulations (CFD) to verify flow rates at 1.5G lateral acceleration.</li>
+            </ul>
+
+            <h2 class="section-title">The Result</h2>
+            <p>
+                The final tank reduced weight by 15% compared to the previous year and successfully passed the technical inspection "tilt test" without leakage.
+            </p>
+            
+            <div class="image-gallery">
+                <img src="https://via.placeholder.com/900x400?text=Fabrication+Process" alt="Welding the tank">
+            </div>
+        </section>
+
+    </div>
+
+    <footer style="text-align:center; padding: 2rem; background: var(--dark); color: white; margin-top: 3rem;">
+        <p>&copy; 2026 Sebastian Levy</p>
+    </footer>
+
+</body>
+</html>
