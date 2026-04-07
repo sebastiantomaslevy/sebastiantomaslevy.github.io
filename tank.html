@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E.D.R.I.S. Tank Vehicle — Sebastian Levy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">SL<span>.</span></a>
+            <ul>
+                <li><a href="index.html">← Portfolio</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="tank-header">
+        <div class="hero-eyebrow">MECH 2412 Mini-Design · York University</div>
+        <h1>E.D.R.I.S.</h1>
+        <p>Emergency Delivery Robot for Incident Support</p>
+        <p class="metadata">Role: FEA, Mechanical System Design &amp; Testing &nbsp;|&nbsp; Skills: SolidWorks, Arduino, 3D Printing, Mechanical Design</p>
+    </header>
+
+    <div class="container">
+        <a href="index.html" class="back-btn">← Back to Portfolio</a>
+
+        <div class="page-content">
+
+            <h2 class="section-title">Project Overview</h2>
+            <p>
+                E.D.R.I.S. is a fully 3D-printed unmanned ground vehicle (UGV) designed for emergency delivery applications
+                in hazardous environments — built entirely from scratch with a zero-dollar budget as part of the MECH 2412
+                Mini-Design course. The robot is modelled after a tank chassis with continuous PETG tracks, a custom two-speed
+                gearbox, double-differential steering, and an Arduino-based control system.
+            </p>
+            <p>
+                The vehicle was required to carry a minimum 2 kg payload, reach 1.0 m/s on flat terrain, climb a 15° incline,
+                detect obstacles autonomously, and be fully disassembled in under 2 minutes — all without purchasing any structural
+                components.
+            </p>
+
+            <h2 class="section-title">My Role</h2>
+            <p>
+                As part of a six-person team, I was responsible for the final mechanical system description, structural testing
+                of mechanical subsystems (drivetrain, suspension, and gear shifting), and all finite element analysis (FEA) and
+                hand calculations to verify structural integrity under load.
+            </p>
+            <ul>
+                <li><strong>FEA:</strong> Performed structural finite element analysis on chassis plates confirming max stress of 1.28 MPa — well below PETG's 70 MPa compressive limit.</li>
+                <li><strong>Hand Calculations:</strong> Force-balance analysis for 15° incline traversal, torque requirements per sprocket, and load-bearing capacity of top and bottom chassis plates.</li>
+                <li><strong>Mechanical Testing:</strong> Evaluated drivetrain, gear switching, suspension, and steering performance during prototype testing phase.</li>
+                <li><strong>System Description:</strong> Authored the final system description documenting the complete mechanical architecture.</li>
+            </ul>
+
+            <h2 class="section-title">System Architecture</h2>
+            <p>EDRIS is built around three interconnected subsystems:</p>
+            <ul>
+                <li><strong>Power & Drive:</strong> 12V DC motor feeds an L298N motor driver, routed through a fixed bevel-gear stage into a custom two-speed dog-clutch transmission (23:1 low gear, 12:1 high gear). The 12V lithium-ion battery is positioned at the lowest point to lower the centre of gravity.</li>
+                <li><strong>Mechanical Drivetrain:</strong> Power flows through a transfer case (servo-actuated rack and pinion) that switches between drive mode and steer mode. Steering is achieved via a double differential — rotating both tracks in opposite directions for zero-radius turns. Spring-loaded rocker suspension supports all four road wheels, distributing load with a static capacity of 10 kg.</li>
+                <li><strong>Control & Sensing:</strong> An analog joystick on an Arduino Uno R4 controls motor speed and direction. A deadzone prevents drift. IR and ultrasonic sensors were integrated for autonomous obstacle detection (gradual deceleration at 30 cm, emergency stop at 10 cm), though sensor integration failed post-assembly due to suspected electrical damage.</li>
+            </ul>
+
+            <h2 class="section-title">Vehicle in Action</h2>
+            <p>Watch the final prototype demonstrating drive, steering, and gear-shifting capabilities:</p>
+
+            <div class="video-embed">
+                <video autoplay muted loop playsinline>
+                    <source src="images/tank_video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p class="caption">E.D.R.I.S. prototype — drive test</p>
+            </div>
+
+            <h2 class="section-title">CAD & Prototype</h2>
+
+            <div class="image-gallery">
+                <img src="images/tank1.png" alt="EDRIS Tank Prototype">
+                <p class="caption">Final assembled prototype — front quarter view</p>
+            </div>
+
+            <div class="image-gallery">
+                <img src="images/tank2.png" alt="EDRIS Tank Side View">
+                <p class="caption">Prototype side view — continuous PETG track and rocker suspension visible</p>
+            </div>
+
+            <div class="image-gallery">
+                <img src="images/tankexploded.png" alt="EDRIS Exploded CAD View">
+                <p class="caption">Exploded CAD assembly — SolidWorks</p>
+            </div>
+
+            <h2 class="section-title">Key Results</h2>
+            <ul>
+                <li><strong>Dimensions:</strong> 201.5 mm × 329 mm × 133 mm</li>
+                <li><strong>Payload:</strong> Successfully transported 2 kg on flat terrain</li>
+                <li><strong>Speed:</strong> 0.28 m/s (low gear, 23:1) · 0.51 m/s (high gear, 12:1)</li>
+                <li><strong>Gear Shifting:</strong> Average 3.5 seconds neutral-to-gear</li>
+                <li><strong>Suspension:</strong> 10 kg static load capacity; traversed obstacles and rough terrain</li>
+                <li><strong>Disassembly:</strong> 1 minute 45 seconds for full teardown (modular M5/M2.5 fasteners + press-fit)</li>
+                <li><strong>Chassis Stress (FEA):</strong> Max 1.28 MPa — safety factor of ~55× against PETG compressive limit</li>
+            </ul>
+
+            <h2 class="section-title">Design Challenges</h2>
+            <p>
+                The original gear ratios of 12.72:1 (low) and 2.06:1 (high) produced speeds up to 4.31 m/s — high enough to
+                melt the PETG shafts during testing. Ratios were completely redesigned to 23:1 and 12:1 to prioritize torque
+                and thermal safety. The CVT originally selected was replaced with a manually shifted two-speed dog clutch to
+                stay within the zero-dollar budget and eliminate belt slippage risk.
+            </p>
+            <p>
+                IR and ultrasonic sensors functioned correctly in isolation but became non-functional after full system integration,
+                likely due to electrical damage sustained during assembly. The joystick control system remained fully functional
+                throughout, and the mechanical drivetrain, steering, suspension, and gearbox all performed as intended.
+            </p>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Sebastian Levy</p>
+    </footer>
+
+</body>
+</html>
