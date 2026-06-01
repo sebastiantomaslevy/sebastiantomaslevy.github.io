@@ -3,219 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Engineering Portfolio</title>
-    <style>
-        /* --- CSS STYLES --- */
-        :root {
-            --primary: #003366; /* Deep Engineering Blue */
-            --accent: #E34A08;  /* Highlight Orange (Good for calls to action) */
-            --light: #f4f4f4;
-            --dark: #333;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            color: var(--dark);
-            /* Cool Gradient Effect */
-        background: linear-gradient(to bottom, #dbe6f6, #c5d2e0);
-            /* Alternative (Dark Blue Gradient): */
-            /* background: linear-gradient(to right, #141e30, #243b55); color: white; */
-            min-height: 100vh; /* Ensures gradient covers full height */
-        }
-
-        /* Navigation */
-        nav {
-            background: var(--primary);
-            color: white;
-            padding: 1rem;
-            text-align: center;
-        }
-        nav ul {
-            padding: 0;
-            list-style: none;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        
-        header {
-            /* This stacks a dark transparent layer ON TOP of your image so text pops */
-            background-image: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.6)), 
-                              url('images/jet.png'); /* <--- CHANGE THIS FILENAME */
-            
-            background-size: cover;      /* Forces image to cover the whole box */
-            background-position: center; /* Centers the image */
-            background-attachment: fixed; /* PARALLAX EFFECT: Image stays still while you scroll */
-            
-            padding: 5rem 1rem; /* Added more padding for a "bigger" look */
-            text-align: center;
-            border-bottom: 5px solid var(--accent);
-            color: white; /* Force text to be white */
-        }
-
-        /* Update header text color overrides since background is now dark */
-        header h1 {
-            margin: 0;
-            font-size: 3rem;
-            color: white; /* Override the blue color */
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Adds a shadow to make text readable */
-        }
-        header p {
-            font-size: 1.3rem;
-            color: #eee; /* Light grey for subtext */
-            margin-bottom: 1.5rem;
-        }
-
-        /* Container */
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 0 2rem;
-        }
-
-        /* Projects Grid */
-        .projects {
-            margin: 3rem 0;
-        }
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        .card {
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-        }
-        .card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            background-color: #eee; /* Placeholder color */
-        }
-        .card-content {
-            padding: 1.5rem;
-        }
-        .tag {
-            background: var(--primary);
-            color: white;
-            padding: 3px 8px;
-            font-size: 0.8rem;
-            border-radius: 3px;
-            margin-right: 5px;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--dark);
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
-        }
-        
-        /* Button Style */
-        .btn {
-            display: inline-block;
-            background: var(--accent);
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 10px;
-        }
-    </style>
+    <title>Sebastian Levy — Engineering Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#resume">Resume</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <div class="nav-inner">
+            <a href="#home" class="nav-logo">SL<span>.</span></a>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#experiences">Experiences</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="images/Sebastian_Levy.pdf">Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </nav>
 
     <header id="home">
+        <div class="hero-eyebrow">Mechanical Engineering · York University</div>
         <h1>Sebastian Levy</h1>
-        <p>Undergraduate Mechanical Engineering Student</p>
-        <p>Stongly Interested in Mechatronics, Manufacturing, and Entrepreneurship</p>
-        <a href="#contact" class="btn">Get in Touch</a>
+        <p>Undergraduate engineer focused on mechatronics,<br>motorsports, and building things that actually work.</p>
+        <a href="#experiences" class="btn">View Projects</a>
+        <a href="#contact" class="btn btn-outline">Get in Touch</a>
     </header>
 
     <div class="container">
-        <section style="padding: 2rem 0;">
-            <h2>About Me</h2>
-            <p>
-                I am a 2nd-year Mechanical Engineering student at York University with a passion for motorsports and robotics. 
-                Currently working on the powertrain team for Lassonde Motorsports and building automated mechatronic systems.
-            </p>
+
+        <section class="about-strip">
+            <div class="about-text">
+                <div class="section-label">About</div>
+                <h2>Driven by systems that move.</h2>
+                <p>
+                    I'm a 2nd-year Mechanical Engineering student at York University with a passion for motorsports and robotics. 
+                    Currently working on the powertrain team for Lassonde Motorsports and building automated mechatronic systems.
+                </p>
+                <div class="about-pills">
+                    <span class="pill">SolidWorks</span>
+                    <span class="pill">Arduino / C++</span>
+                    <span class="pill">FSAE Powertrain</span>
+                    <span class="pill">CFD / Ansys</span>
+                    <span class="pill">Python</span>
+                    <span class="pill">Welding</span>
+                </div>
+            </div>
         </section>
 
-        <section id="projects" class="projects">
-            <h2>Technical Projects</h2>
+        <section id="experiences">
+            <div class="section-label">Experience</div>
+            <h2>Experiences</h2>
             <div class="project-grid">
-                
+
                 <div class="card">
-                    <img src="images/chassis_image.png" alt="FSAE Project"> 
+                    <img src="images/chassis_image.png" alt="FSAE Fuel Tank">
                     <div class="card-content">
+                        <div class="tags">
+                            <span class="tag">SolidWorks</span>
+                            <span class="tag">CFD</span>
+                            <span class="tag">Powertrain</span>
+                        </div>
                         <h3>FSAE Fuel Tank Design</h3>
-                        <span class="tag">SolidWorks</span> <span class="tag">Fluid Dynamics</span>
-                        <p>Designed and fabricated a custom fuel tank for the Formula Student race car. Optimized for weight reduction and regulatory compliance.</p>
-                        <a href="fsae.html" class="btn" style="background:var(--primary); font-size:0.9rem;">View Details</a>
+                        <p>Designed and fabricated a custom fuel tank for the Formula Student race car, optimized for weight reduction and regulatory compliance.</p>
+                        <a href="fsae.html" class="btn btn-sm">View Details →</a>
                     </div>
                 </div>
 
                 <div class="card">
-                    <img src="images/instrum.jpeg" alt="Mechatronics Project">
+                    <img src="images/hackathon.jpeg" alt="University Experience">
                     <div class="card-content">
-                        <h3>Automated Pet Feeder</h3>
-                        <span class="tag">Arduino</span> <span class="tag">C++</span> <span class="tag">Mechatronics</span>
-                        <p>Built a programmable feeder using stepper motors and sensors. integrated a custom circuit with an LCD interface for scheduling.</p>
-                        <a href="pet-feeder.html" class="btn" style="background:var(--primary); font-size:0.9rem;">View Details</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img src="images/hackathon.jpeg" alt="AIC Hackathon">
-                    <div class="card-content">
+                        <div class="tags">
+                            <span class="tag">Hackathons</span>
+                            <span class="tag">Leadership</span>
+                            <span class="tag">Awards</span>
+                        </div>
                         <h3>University Experience</h3>
-                        <span class="tag">Hackathons</span> <span class="tag">Volunteering</span> <span class="tag">Awards/Scholarships</span>
-                        <p>Community involvement within York University and career goals</p>
-                        <a href="experience.html" class="btn" style="background:var(--primary); font-size:0.9rem;">View Details</a>
+                        <p>Community involvement within York University — hackathon wins, orientation leadership, and scholarships.</p>
+                        <a href="universityexperience.html" class="btn btn-sm">View Details →</a>
                     </div>
                 </div>
 
             </div>
         </section>
 
-        <section id="contact" style="text-align:center; padding: 4rem 0;">
-            <h2>Let's Connect</h2>
-            <p></p>
-            <p>Email: <a href="mailto:mail4slevy@gmail.com">mail4slevy@gmail.com</a></p>
-            <p>
-                <a href="https://www.linkedin.com/in/sebastian-levy-0823a4299">LinkedIn</a> | <a href="tel:289-544-7954">Phone</a>
-            </p>
+        <section id="projects">
+            <div class="section-label">Work</div>
+            <h2>Technical Projects</h2>
+            <div class="project-grid">
+
+                <div class="card">
+                    <img src="images/instrum.jpeg" alt="Automated Pet Feeder">
+                    <div class="card-content">
+                        <div class="tags">
+                            <span class="tag">Arduino</span>
+                            <span class="tag">C++</span>
+                            <span class="tag">Mechatronics</span>
+                        </div>
+                        <h3>Automated Pet Feeder</h3>
+                        <p>Built a programmable feeder using stepper motors and sensors with a custom circuit and LCD interface for scheduling.</p>
+                        <a href="pet-feeder.html" class="btn btn-sm">View Details →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="images/tank1.png" alt="EDRIS Tank Vehicle">
+                    <div class="card-content">
+                        <div class="tags">
+                            <span class="tag">3D Printing</span>
+                            <span class="tag">Arduino</span>
+                            <span class="tag">Mechanical Design</span>
+                        </div>
+                        <h3>E.D.R.I.S. — Mini-Design Tank</h3>
+                        <p>Designed and built a fully 3D-printed tracked UGV for emergency delivery. Custom two-speed gearbox, double-differential steering, and FEA-validated PETG chassis.</p>
+                        <a href="tank.html" class="btn btn-sm">View Details →</a>
+                    </div>
+                </div>
+
+            </div>
         </section>
+
+        <section id="contact" class="contact-section">
+            <div class="section-label">Contact</div>
+            <h2>Let's Connect</h2>
+            <p>Open to internships, collaborations, and interesting engineering problems.</p>
+            <div class="contact-links">
+                <a href="mailto:mail4slevy@gmail.com" class="contact-link">✉ mail4slevy@gmail.com</a>
+                <a href="https://www.linkedin.com/in/sebastian-t-levy" class="contact-link" target="_blank">in LinkedIn</a>
+                <a href="tel:289-544-7954" class="contact-link">📞 289-544-7954</a>
+            </div>
+        </section>
+
     </div>
 
     <footer>
-        <p>&copy; 2026 Sebastian Levy. Built with HTML.</p>
+        <p>&copy; 2026 Sebastian Levy &mdash; Built with HTML &amp; CSS</p>
     </footer>
 
 </body>
