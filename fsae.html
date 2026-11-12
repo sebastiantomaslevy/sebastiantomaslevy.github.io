@@ -5,6 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FSAE Fuel Tank Design — Sebastian Levy</title>
     <link rel="stylesheet" href="style.css">
+
+    <!-- Styles for the new image/section elements. Move into style.css if you prefer. -->
+    <style>
+        .page-content figure { margin: 2rem 0; }
+        .page-content figure img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+        }
+        .page-content figcaption {
+            margin-top: 0.6rem;
+            font-size: 0.9rem;
+            opacity: 0.75;
+            line-height: 1.5;
+        }
+        .figure-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .figure-grid figure { margin: 0; }
+        .hero-figure img { max-height: 480px; object-fit: cover; }
+        .spec-list { padding-left: 1.2rem; }
+        .spec-list li { margin-bottom: 0.5rem; }
+        @media (max-width: 700px) {
+            .figure-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
 
@@ -28,6 +58,15 @@
 
         <div class="page-content">
 
+            <!-- Overview + hero image -->
+            <h2 class="section-title">Overview</h2>
+            <figure class="hero-figure">
+                <img src="images/fsaecar.png"
+                     alt="The Lassonde Motorsports Formula SAE car"
+                     loading="lazy">
+                <figcaption>The Lassonde Motorsports FSAE car, which the fuel tank is designed to fit into.</figcaption>
+            </figure>
+
             <h2 class="section-title">My Role</h2>
             <p>
                 As a member of the powertrain team, I am responsible for the entire fuel tank and fuel delivery system —
@@ -38,15 +77,58 @@
                 including a tilt test and endurance test to ensure driver safety.
             </p>
 
+            <!-- Solution -->
             <h2 class="section-title">The Solution</h2>
             <p>I designed a custom aluminum fuel tank featuring:</p>
-            <ul>
+            <ul class="spec-list">
                 <li><strong>Baffle System:</strong> Integrated internal baffling to minimize fuel sloshing under cornering loads.</li>
                 <li><strong>BOM Selection:</strong> Researched and sourced all components to maximize performance and meet regulations.</li>
                 <li><strong>CAD Modeling:</strong> Modelled optimum shape and chassis fitment to prevent fuel starvation.</li>
                 <li><strong>Validation:</strong> Performed fluid flow simulations (CFD) to confirm adequate pump supply under all conditions.</li>
             </ul>
 
+            <!-- CAD -->
+            <h2 class="section-title">CAD &amp; Chassis Fitment</h2>
+            <p>
+                The tank was modelled in SolidWorks and checked against the full car assembly so that its shape
+                uses the available space in the chassis while keeping the pickup supplied with fuel.
+            </p>
+            <div class="figure-grid">
+                <figure>
+                    <img src="images/fueltankcad.png"
+                         alt="SolidWorks CAD model of the custom aluminum fuel tank"
+                         loading="lazy">
+                    <figcaption>CAD model of the fuel tank.</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/fsaecarcad.png"
+                         alt="CAD model of the FSAE car showing the fuel tank position within the chassis"
+                         loading="lazy">
+                    <figcaption>Fuel tank positioned within the car's CAD assembly.</figcaption>
+                </figure>
+            </div>
+
+            <!-- Drawings -->
+            <h2 class="section-title">Engineering Drawings</h2>
+            <p>
+                Dimensioned drawings were produced to guide fabrication and welding of the tank.
+            </p>
+            <div class="figure-grid">
+                <figure>
+                    <img src="images/fueltankdrawing.png"
+                         alt="Engineering drawing of the fuel tank, sheet 1"
+                         loading="lazy">
+                    <figcaption>Fuel tank drawing, sheet 1.</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/fueltankdrawing2.png"
+                         alt="Engineering drawing of the fuel tank, sheet 2"
+                         loading="lazy">
+                    <figcaption>Fuel tank drawing, sheet 2.</figcaption>
+                </figure>
+            </div>
+
+            <!-- Result -->
             <h2 class="section-title">The Result</h2>
             <p>
                 The tank is currently in the fabrication phase — to be welded and pressure-tested.
